@@ -3,135 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0a0f0c" />
-  <meta name="description" content="ZenDev — контент-мейкер и разработчик Dreadshot. Беларусь." />
+  <meta name="theme-color" content="#08100b" />
+  <meta name="description" content="ZenDev — контент-мейкер и разработчик игры Dreadshot. Беларусь." />
   <title>ZenDev — Game Developer & Content Creator</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0f0c'/%3E%3Cpath d='M25 27h50v11H38v9h29c9 0 15 6 15 15s-6 15-15 15H25V66h35c3 0 5-1 5-4 0-2-2-3-5-3H42c-11 0-17-6-17-17V27z' fill='%2354d88a'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2308100b'/%3E%3Cpath d='M25 27h50v11H38v9h29c9 0 15 6 15 15s-6 15-15 15H25V66h35c3 0 5-1 5-4 0-2-2-3-5-3H42c-11 0-17-6-17-17V27z' fill='%235ce08e'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="page-noise" aria-hidden="true"></div>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="ZenDev"><span class="brand-mark">Z</span><span>ZenDev</span></a>
+      <a class="brand" href="#top" aria-label="ZenDev home">
+        <span class="brand-mark">Z</span>
+        <span>ZenDev</span>
+      </a>
       <nav class="nav-links" aria-label="Навигация">
         <a href="#dreadshot">Dreadshot</a>
         <a href="#support">Поддержка</a>
       </nav>
-      <a class="header-link" href="https://t.me/zen_gd" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+      <a class="header-link" href="https://t.me/zen_gd" target="_blank" rel="noopener noreferrer">Telegram <span>↗</span></a>
     </div>
   </header>
 
   <main id="top">
-    <section class="intro section">
-      <div class="container intro-wrap">
-        <div class="intro-copy">
-          <div class="location">Беларусь · ZenDev</div>
-          <h1>Контент-мейкер<br>и разработчик игры <span>Dreadshot</span></h1>
-          <p class="intro-text">Делаю игру, веду разработку открыто и снимаю контент о том, чем занимаюсь.</p>
-        </div>
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="dot"></span> Беларусь · независимый разработчик</div>
+          <h1>ZenDev</h1>
+          <p class="role">Контент-мейкер и разработчик <em>Dreadshot</em>.</p>
+          <p class="hero-note">Показываю разработку игры, делюсь процессом и делаю контент о геймдеве.</p>
 
-        <div class="links-panel" id="socials">
-          <div class="panel-title">Основные ссылки</div>
-          <a class="link-row main-link" href="https://t.me/zen_gd" target="_blank" rel="noopener noreferrer">
-            <span><small>ГЛАВНЫЙ КАНАЛ</small><strong>Telegram @zen_gd</strong></span><b>↗</b>
-          </a>
-          <a class="link-row" href="https://www.youtube.com/@zengd" target="_blank" rel="noopener noreferrer">
-            <span><small>ВИДЕО</small><strong>YouTube @zengd</strong></span><b>↗</b>
-          </a>
-          <a class="link-row" href="https://www.twitch.tv/zen_gamedev" target="_blank" rel="noopener noreferrer">
-            <span><small>СТРИМЫ</small><strong>Twitch @zen_gamedev</strong></span><b>↗</b>
-          </a>
-          <a class="link-row" href="https://www.tiktok.com/@zen.dev" target="_blank" rel="noopener noreferrer">
-            <span><small>КОРОТКИЕ ВИДЕО</small><strong>TikTok @zen.dev</strong></span><b>↗</b>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section telegram-focus">
-      <div class="container">
-        <a class="telegram-banner" href="https://t.me/zen_gd" target="_blank" rel="noopener noreferrer">
-          <div>
-            <span>Основная точка входа</span>
-            <h2>Telegram @zen_gd</h2>
-            <p>Новости, разработка Dreadshot, мысли и новый контент.</p>
+          <div class="hero-mini">
+            <div><span>Сейчас</span><strong>Разрабатываю Dreadshot</strong></div>
+            <div><span>Движок</span><strong>Unreal Engine 5</strong></div>
           </div>
-          <span class="telegram-action">Перейти в канал ↗</span>
-        </a>
+        </div>
+
+        <div class="social-card" id="socials">
+          <div class="social-head">
+            <div>
+              <span>Ссылки</span>
+              <h2>Где меня найти</h2>
+            </div>
+            <span class="social-count">04</span>
+          </div>
+          <div class="social-list">
+            <a class="social-row featured" href="https://t.me/zen_gd" target="_blank" rel="noopener noreferrer">
+              <span class="social-icon telegram">↗</span>
+              <span class="social-text"><small>TELEGRAM</small><strong>Основной канал</strong></span>
+              <span class="social-arrow">↗</span>
+            </a>
+            <a class="social-row" href="https://www.youtube.com/@zengd" target="_blank" rel="noopener noreferrer">
+              <span class="social-icon">▶</span>
+              <span class="social-text"><small>YOUTUBE</small><strong>@zengd</strong></span>
+              <span class="social-arrow">↗</span>
+            </a>
+            <a class="social-row" href="https://www.twitch.tv/zen_gamedev" target="_blank" rel="noopener noreferrer">
+              <span class="social-icon">◈</span>
+              <span class="social-text"><small>TWITCH</small><strong>@zen_gamedev</strong></span>
+              <span class="social-arrow">↗</span>
+            </a>
+            <a class="social-row" href="https://www.tiktok.com/@zen.dev" target="_blank" rel="noopener noreferrer">
+              <span class="social-icon">♪</span>
+              <span class="social-text"><small>TIKTOK</small><strong>@zen.dev</strong></span>
+              <span class="social-arrow">↗</span>
+            </a>
+          </div>
+          <a class="telegram-cta" href="https://t.me/zen_gd" target="_blank" rel="noopener noreferrer">
+            <span><b>Главный канал</b><small>Новости, разработка, мысли, новый контент</small></span>
+            <strong>Перейти ↗</strong>
+          </a>
+        </div>
       </div>
+      <div class="hero-line" aria-hidden="true"><span></span></div>
     </section>
 
-    <section class="section" id="dreadshot">
+    <section class="section project-section" id="dreadshot">
       <div class="container">
-        <div class="section-title">
-          <span>Проект</span>
-          <h2>Dreadshot</h2>
-          <p>Высокоскоростной FPS про движение, оружие и стиль. Разрабатываю игру на Unreal Engine 5.</p>
+        <div class="section-heading compact">
+          <div><span>01 · Проект</span><h2>Dreadshot</h2></div>
+          <p>Высокоскоростной FPS про движение, оружие и стиль.</p>
         </div>
 
         <div class="project-card">
-          <div class="project-info">
-            <div class="status">В разработке</div>
-            <h3>Dreadshot</h3>
-            <p>PC-игра, которую я создаю и показываю по мере разработки.</p>
-            <div class="project-meta">
-              <span><small>ДВИЖОК</small>Unreal Engine 5</span>
-              <span><small>ПЛАТФОРМА</small>PC / Steam</span>
-            </div>
+          <div class="project-main">
+            <div class="project-topline"><span class="status"><i></i> В разработке</span><span class="project-code">DS / V3</span></div>
+            <h3>Игра, которую я делаю<br>с нуля.</h3>
+            <p>PC-шутер на Unreal Engine 5. Показываю разработку и обновления по мере работы над проектом.</p>
             <div class="project-actions">
-              <a class="button primary" href="https://store.steampowered.com/app/2782640/Dreadshot/" target="_blank" rel="noopener noreferrer">Dreadshot в Steam ↗</a>
+              <a class="button primary" href="https://store.steampowered.com/app/2782640/Dreadshot/" target="_blank" rel="noopener noreferrer">Steam ↗</a>
               <a class="button secondary" href="https://t.me/dreadshot_game" target="_blank" rel="noopener noreferrer">Telegram игры ↗</a>
             </div>
           </div>
-          <div class="project-visual" aria-hidden="true"><span>D</span></div>
+          <div class="project-art" aria-hidden="true">
+            <div class="art-grid"></div>
+            <div class="art-ring"></div>
+            <div class="art-mark">D</div>
+            <div class="art-caption">DREADSHOT / DEVELOPMENT</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="support">
+    <section class="section support-section" id="support">
       <div class="container">
-        <div class="section-title">
-          <span>Поддержка</span>
-          <h2>Помочь мне с проектом</h2>
-          <p>Можно поддержать разработку разовым донатом или подпиской на закрытое сообщество.</p>
+        <div class="section-heading compact">
+          <div><span>02 · Поддержка</span><h2>Поддержать</h2></div>
+          <p>Подписка, разовый донат или перевод напрямую.</p>
         </div>
 
         <div class="support-grid">
           <a class="support-card featured" href="https://t.me/tribute/app?startapp=s4Y3" target="_blank" rel="noopener noreferrer">
+            <div class="card-index">01</div>
             <small>ЗАКРЫТОЕ СООБЩЕСТВО</small>
             <h3>ZenDev Eternal</h3>
-            <p>Эксклюзивный контент, технические инсайты по Dreadshot, записи стримов и приватное комьюнити.</p>
-            <strong>Присоединиться ↗</strong>
+            <p>Эксклюзивный контент, технические инсайты, записи стримов и приватное комьюнити.</p>
+            <strong>Открыть ↗</strong>
           </a>
           <a class="support-card" href="https://www.donationalerts.com/r/zen_gd" target="_blank" rel="noopener noreferrer">
-            <small>РАЗОВАЯ ПОДДЕРЖКА</small>
+            <div class="card-index">02</div>
+            <small>РАЗОВЫЙ ДОНАТ</small>
             <h3>DonationAlerts</h3>
-            <p>Простой способ отправить донат.</p>
+            <p>Простой способ поддержать проект через DonationAlerts.</p>
             <strong>Открыть ↗</strong>
           </a>
           <a class="support-card" href="https://t.me/tribute/app?startapp=djPw" target="_blank" rel="noopener noreferrer">
-            <small>РАЗОВАЯ ПОДДЕРЖКА</small>
+            <div class="card-index">03</div>
+            <small>РАЗОВЫЙ ДОНАТ</small>
             <h3>Tribute</h3>
-            <p>Донат через Telegram.</p>
+            <p>Перевод через Telegram.</p>
             <strong>Открыть ↗</strong>
           </a>
         </div>
 
         <div class="crypto-card">
-          <div class="crypto-top">
-            <div><span>КРИПТОВАЛЮТА</span><h3>Адреса для перевода</h3></div>
-            <p>Нажмите «Копировать».</p>
-          </div>
-          <div class="crypto-row">
-            <div><small>USDT / TON · GRAM / TON</small><code>UQAOXfnm7w6K2qPjWPVDUIy_Ux7si_9Roukzqd7AhaMFZ9_6</code></div>
-            <button class="copy-btn" type="button" data-copy="UQAOXfnm7w6K2qPjWPVDUIy_Ux7si_9Roukzqd7AhaMFZ9_6">Копировать</button>
-          </div>
-          <div class="crypto-row">
-            <div><small>USDT · TRC20</small><code>TYjeh2K3WhSwh362cdFHZdHHArVZaiJF3s</code></div>
-            <button class="copy-btn" type="button" data-copy="TYjeh2K3WhSwh362cdFHZdHHArVZaiJF3s">Копировать</button>
+          <div class="crypto-heading"><span>КРИПТОПЕРЕВОД</span><h3>Адреса</h3></div>
+          <div class="crypto-list">
+            <div class="crypto-row">
+              <div class="crypto-label"><small>USDT / TON · GRAM / TON</small><code>UQAOXfnm7w6K2qPjWPVDUIy_Ux7si_9Roukzqd7AhaMFZ9_6</code></div>
+              <button class="copy-btn" type="button" data-copy="UQAOXfnm7w6K2qPjWPVDUIy_Ux7si_9Roukzqd7AhaMFZ9_6">Копировать</button>
+            </div>
+            <div class="crypto-row">
+              <div class="crypto-label"><small>USDT · TRC20</small><code>TYjeh2K3WhSwh362cdFHZdHHArVZaiJF3s</code></div>
+              <button class="copy-btn" type="button" data-copy="TYjeh2K3WhSwh362cdFHZdHHArVZaiJF3s">Копировать</button>
+            </div>
           </div>
         </div>
       </div>
@@ -141,7 +160,7 @@
   <footer class="footer">
     <div class="container footer-wrap">
       <span>ZenDev · Беларусь</span>
-      <a href="https://t.me/zen_gd/9915" target="_blank" rel="noopener noreferrer">Полезные материалы по геймдеву ↗</a>
+      <a href="https://t.me/zen_gd/9915" target="_blank" rel="noopener noreferrer">Материалы по геймдеву ↗</a>
     </div>
   </footer>
   <div class="toast" id="toast" role="status" aria-live="polite">Скопировано</div>
