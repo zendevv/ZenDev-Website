@@ -6,7 +6,7 @@
 
 - `index.html` — структура и контент
 - `style.css` — адаптивная верстка, квадратная анимированная сетка, эффекты и анимации
-- `script.js` — копирование крипто-адресов, раскрытие биографии, scroll-reveal и загрузка данных Dreadshot из Steam Store API
+- `script.js` — копирование крипто-адресов, раскрытие биографии, scroll-reveal и загрузка данных Dreadshot из Steam Store API через CORS bridge
 
 ## GitHub Pages
 
@@ -19,3 +19,5 @@
 ## Steam
 
 Сайт использует Steam Store App Details API для App ID `2782640`, чтобы подтягивать название, краткое описание, жанры и screenshots Dreadshot. Если API недоступен, остаются локальные fallback-значения и сайт продолжает работать.
+
+Прямой запрос Store API с GitHub Pages может быть заблокирован браузером политикой CORS. Поэтому скрипт сначала использует AllOrigins как CORS bridge, а затем пробует прямой запрос. Screenshot-URL остаются оригинальными Steam CDN URL.
