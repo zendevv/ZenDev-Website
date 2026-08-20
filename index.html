@@ -35,14 +35,14 @@
     <section class="section hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span class="dot"></span> From Belarus, with love <3 </div>
+          <div class="eyebrow"><span class="dot"></span> Беларусь · Zen Developer</div>
           <div class="hero-name-wrap">
             <h1>ZenDev</h1>
             <span class="hero-index">/01</span>
           </div>
           <p class="role">Контент-мейкер и разработчик <em>Dreadshot</em>.</p>
           <p class="hero-note">Показываю разработку, делюсь процессом и иногда выхожу в эфир.</p>
-          <div class="hero-pulse"><span></span><b>работаю над Dreadshot</b></div>
+          <div class="hero-pulse"><span></span><b>сейчас работаю над Dreadshot</b><small>активная разработка</small></div>
         </div>
 
         <div class="social-card reveal delay-1" id="socials">
@@ -57,22 +57,22 @@
           <div class="social-list">
             <a class="social-row featured" href="https://t.me/zen_gd" target="_blank" rel="noopener noreferrer">
               <span class="social-icon telegram">✈</span>
-              <span class="social-text"><small>Новости, мысли и разработка Dreadshot</small><strong>TELEGRAM · ОСНОВНОЙ КАНАЛ</strong></span>
+              <span class="social-text"><small>TELEGRAM · ОСНОВНОЙ КАНАЛ</small><strong>Новости, мысли и разработка Dreadshot</strong></span>
               <span class="social-arrow">↗</span>
             </a>
             <a class="social-row" href="https://www.youtube.com/@zengd" target="_blank" rel="noopener noreferrer">
               <span class="social-icon">▶</span>
-              <span class="social-text"><small>@zengd</small><strong>YOUTUBE</strong></span>
+              <span class="social-text"><small>YOUTUBE</small><strong>@zengd</strong></span>
               <span class="social-arrow">↗</span>
             </a>
             <a class="social-row" href="https://www.twitch.tv/zen_gamedev" target="_blank" rel="noopener noreferrer">
               <span class="social-icon">◈</span>
-              <span class="social-text"><small>@zen_gamedev</small><strong>TWITCH</strong></span>
+              <span class="social-text"><small>TWITCH</small><strong>@zen_gamedev</strong></span>
               <span class="social-arrow">↗</span>
             </a>
             <a class="social-row" href="https://www.tiktok.com/@zen.dev" target="_blank" rel="noopener noreferrer">
               <span class="social-icon">♪</span>
-              <span class="social-text"><small>@zen.dev</small><strong>TIKTOK</strong></span>
+              <span class="social-text"><small>TIKTOK</small><strong>@zen.dev</strong></span>
               <span class="social-arrow">↗</span>
             </a>
           </div>
@@ -86,7 +86,7 @@
       <div class="container">
         <div class="section-heading compact reveal">
           <div><span>02 · Проект</span><h2>Dreadshot</h2></div>
-          <p>Собственно, ради чего мы все тут собрались - мой основной проект :)</p>
+          <p>Быстрый FPS с паркуром, стрельбой и акцентом на движение.</p>
         </div>
 
         <div class="project-card reveal delay-1">
@@ -104,10 +104,22 @@
             </div>
             <div class="project-actions">
               <a class="button primary" href="https://store.steampowered.com/app/2782640/Dreadshot/" target="_blank" rel="noopener noreferrer">Страница в Steam ↗</a>
-              <a class="button secondary" href="https://t.me/dreadshot_game" target="_blank" rel="noopener noreferrer">Telegram-канал игры ↗</a>
+              <a class="button secondary" href="https://t.me/dreadshot_game" target="_blank" rel="noopener noreferrer">Telegram игры ↗</a>
             </div>
           </div>
         </div>
+
+        <div class="steam-gallery reveal" id="steamGallery" aria-label="Скриншоты Dreadshot">
+          <div class="gallery-frame" tabindex="0" role="group" aria-label="Галерея скриншотов Dreadshot">
+            <button class="gallery-arrow gallery-prev" id="galleryPrev" type="button" aria-label="Предыдущий скриншот">‹</button>
+            <img id="steamScreenshot" src="https://cdn.cloudflare.steamstatic.com/steam/apps/2782640/ss_1.jpg" alt="Dreadshot — скриншот" loading="lazy" />
+            <button class="gallery-arrow gallery-next" id="galleryNext" type="button" aria-label="Следующий скриншот">›</button>
+            <div class="gallery-meta"><span id="galleryCounter">1 / —</span><span>SCREENSHOTS · STEAM</span></div>
+          </div>
+          <div class="gallery-strip" id="galleryStrip"></div>
+        </div>
+      </div>
+    </section>
 
     <section class="section about-section" id="about">
       <div class="container">
