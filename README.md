@@ -1,14 +1,15 @@
-# ZenDev — website
+# ZenDev — personal landing page
 
-Статический сайт-визитка для GitHub Pages.
+Статический сайт для GitHub Pages. Никакого backend, базы данных или build step.
 
-## Публикация через GitHub Pages
+## Файлы
+- `index.html` — разметка и контент
+- `style.css` — дизайн, адаптивность и анимации
+- `script.js` — копирование крипто-адресов, раскрываемая биография, лёгкий Matrix-фон и попытка подтянуть данные Dreadshot из Steam Store API
 
-1. Создайте репозиторий, например `zendev-site`.
-2. Загрузите `index.html`, `style.css` и `script.js` в корень репозитория.
-3. В GitHub откройте **Settings → Pages**.
-4. В разделе **Build and deployment** выберите **Deploy from a branch**.
-5. Выберите ветку `main` и папку `/ (root)`.
-6. Сохраните настройки — GitHub Pages опубликует сайт.
+## GitHub Pages
+1. Создай публичный репозиторий.
+2. Загрузи эти три файла в корень репозитория.
+3. GitHub → Settings → Pages → Deploy from a branch → `main` / `/root`.
 
-Сайт не требует базы данных, сервера или сборщика.
+Steam API используется как enhancement: если браузер/Steam не разрешит запрос с GitHub Pages, сайт автоматически остаётся на статических данных и Steam-изображении.

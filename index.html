@@ -3,25 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#08100b" />
-  <meta name="description" content="ZenDev — контент-мейкер и разработчик игры Dreadshot. Беларусь." />
-  <title>ZenDev — Game Developer & Content Creator</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2308100b'/%3E%3Cpath d='M25 27h50v11H38v9h29c9 0 15 6 15 15s-6 15-15 15H25V66h35c3 0 5-1 5-4 0-2-2-3-5-3H42c-11 0-17-6-17-17V27z' fill='%235ce08e'/%3E%3C/svg%3E" />
+  <meta name="theme-color" content="#07100b" />
+  <meta name="description" content="ZenDev — контент-мейкер и разработчик Dreadshot." />
+  <title>ZenDev — Dreadshot / Контент / Game Dev</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2307100b'/%3E%3Cpath d='M25 28h50v11H39v8h28c10 0 15 6 15 15 0 9-6 15-15 15H25V66h34c4 0 7-1 7-4s-3-4-7-4H42c-11 0-17-6-17-17V28z' fill='%235ce08e'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="matrix-bg" aria-hidden="true">
+    <canvas id="matrixCanvas"></canvas>
+    <div class="matrix-vignette"></div>
+    <div class="scanline"></div>
+  </div>
   <div class="page-noise" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="ZenDev home">
+      <a class="brand" href="#top" aria-label="ZenDev">
         <span class="brand-mark">Z</span>
         <span>ZenDev</span>
       </a>
       <nav class="nav-links" aria-label="Навигация">
         <a href="#dreadshot">Dreadshot</a>
+        <a href="#about">Обо мне</a>
         <a href="#support">Поддержка</a>
       </nav>
       <a class="header-link" href="https://t.me/zen_gd" target="_blank" rel="noopener noreferrer">Telegram <span>↗</span></a>
@@ -29,32 +36,32 @@
   </header>
 
   <main id="top">
-    <section class="hero section">
+    <section class="section hero">
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="dot"></span> Беларусь · независимый разработчик</div>
-          <h1>ZenDev</h1>
-          <p class="role">Контент-мейкер и разработчик <em>Dreadshot</em>.</p>
-          <p class="hero-note">Показываю разработку игры, делюсь процессом и делаю контент о геймдеве.</p>
-
-          <div class="hero-mini">
-            <div><span>Сейчас</span><strong>Разрабатываю Dreadshot</strong></div>
-            <div><span>Движок</span><strong>Unreal Engine 5</strong></div>
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="dot"></span> Беларусь · Zen Developer</div>
+          <div class="hero-name-wrap">
+            <h1>ZenDev</h1>
+            <span class="hero-index">/01</span>
           </div>
+          <p class="role">Контент-мейкер и разработчик <em>Dreadshot</em>.</p>
+          <p class="hero-note">Показываю разработку, делюсь процессом и иногда выхожу в эфир.</p>
+          <div class="hero-pulse"><span></span><b>сейчас работаю над Dreadshot</b><small>активная разработка</small></div>
         </div>
 
-        <div class="social-card" id="socials">
+        <div class="social-card reveal delay-1" id="socials">
+          <div class="card-glow"></div>
           <div class="social-head">
             <div>
-              <span>Ссылки</span>
+              <span>Мои площадки</span>
               <h2>Где меня найти</h2>
             </div>
             <span class="social-count">04</span>
           </div>
           <div class="social-list">
             <a class="social-row featured" href="https://t.me/zen_gd" target="_blank" rel="noopener noreferrer">
-              <span class="social-icon telegram">↗</span>
-              <span class="social-text"><small>TELEGRAM</small><strong>Основной канал</strong></span>
+              <span class="social-icon telegram">✈</span>
+              <span class="social-text"><small>TELEGRAM · ОСНОВНОЙ</small><strong>Здесь я чаще всего</strong></span>
               <span class="social-arrow">↗</span>
             </a>
             <a class="social-row" href="https://www.youtube.com/@zengd" target="_blank" rel="noopener noreferrer">
@@ -74,36 +81,67 @@
             </a>
           </div>
           <a class="telegram-cta" href="https://t.me/zen_gd" target="_blank" rel="noopener noreferrer">
-            <span><b>Главный канал</b><small>Новости, разработка, мысли, новый контент</small></span>
+            <span><b>Telegram — основной канал</b><small>Разработка Dreadshot, мысли, новости и новый контент</small></span>
             <strong>Перейти ↗</strong>
           </a>
         </div>
       </div>
-      <div class="hero-line" aria-hidden="true"><span></span></div>
+      <div class="hero-line" aria-hidden="true"></div>
     </section>
 
     <section class="section project-section" id="dreadshot">
       <div class="container">
-        <div class="section-heading compact">
-          <div><span>01 · Проект</span><h2>Dreadshot</h2></div>
-          <p>Высокоскоростной FPS про движение, оружие и стиль.</p>
+        <div class="section-heading compact reveal">
+          <div><span>02 · Проект</span><h2>Dreadshot</h2></div>
+          <p>Быстрый FPS с паркуром, стрельбой и акцентом на движение.</p>
         </div>
 
-        <div class="project-card">
+        <div class="project-card reveal delay-1">
+          <div class="project-image-wrap">
+            <img id="steamHeroImage" class="project-image" src="https://cdn.cloudflare.steamstatic.com/steam/apps/2782640/header.jpg" alt="Dreadshot — Steam" loading="lazy" />
+            <div class="project-image-overlay"></div>
+            <div class="image-corner">STEAM / 2782640</div>
+          </div>
           <div class="project-main">
-            <div class="project-topline"><span class="status"><i></i> В разработке</span><span class="project-code">DS / V3</span></div>
-            <h3>Игра, которую я делаю<br>с нуля.</h3>
-            <p>PC-шутер на Unreal Engine 5. Показываю разработку и обновления по мере работы над проектом.</p>
+            <div class="project-topline"><span class="status"><i></i> В разработке</span><span class="project-code">DREADSHOT / V3</span></div>
+            <h3 id="steamTitle">Dreadshot</h3>
+            <p id="steamDescription">Динамичный first-person shooter с паркуром и большим количеством вариантов движения. Сейчас проект полностью перезапускается и собирается заново.</p>
+            <div class="project-tags" id="steamTags">
+              <span>FPS</span><span>Parkour</span><span>Fast-paced</span><span>Indie</span>
+            </div>
             <div class="project-actions">
-              <a class="button primary" href="https://store.steampowered.com/app/2782640/Dreadshot/" target="_blank" rel="noopener noreferrer">Steam ↗</a>
+              <a class="button primary" href="https://store.steampowered.com/app/2782640/Dreadshot/" target="_blank" rel="noopener noreferrer">Страница в Steam ↗</a>
               <a class="button secondary" href="https://t.me/dreadshot_game" target="_blank" rel="noopener noreferrer">Telegram игры ↗</a>
             </div>
           </div>
-          <div class="project-art" aria-hidden="true">
-            <div class="art-grid"></div>
-            <div class="art-ring"></div>
-            <div class="art-mark">D</div>
-            <div class="art-caption">DREADSHOT / DEVELOPMENT</div>
+        </div>
+
+        <div class="steam-gallery" id="steamGallery" aria-label="Скриншоты Dreadshot"></div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-heading compact reveal">
+          <div><span>03 · Обо мне</span><h2>Немного биографии</h2></div>
+          <p>От первых попыток в IT до самостоятельной разработки Dreadshot.</p>
+        </div>
+        <div class="bio-shell reveal delay-1">
+          <button class="bio-toggle" id="bioToggle" type="button" aria-expanded="false" aria-controls="bioContent">
+            <span><b>Влад · ZenDev</b><small>История проекта и путь в геймдев</small></span>
+            <span class="bio-toggle-icon">+</span>
+          </button>
+          <div class="bio-content" id="bioContent" hidden>
+            <div class="bio-copy">
+              <p>Меня зовут Влад, я родился и вырос в Беларуси. Интерес к компьютерам начался очень рано: примерно в три года в нашей семье появился компьютер, и с тех пор я буквально вырос вместе с играми.</p>
+              <p>С детства я прошёл огромное количество игр, а среди тех, которые особенно повлияли на мои вкусы, — <em>Dishonored, The Witcher 3, Cyberpunk 2077</em> и <em>Titanfall 2</em>. Именно игры постепенно превратились из увлечения в желание самому создавать такие миры.</p>
+              <p>В 14 лет я попробовал изучать C++ в IT-школе, но формат обучения мне не подошёл. Следующие два с половиной года я посвятил компьютерной графике и там впервые познакомился с Unreal Engine 4. Примерно тогда же мы с другом основали небольшую инди-студию. Один из наших проектов дошёл до четвертьфинала UEDC 2021 — хороший ранний опыт, который дал гораздо больше практики, чем любые учебники.</p>
+              <p>Студия в итоге распалась: нам не хватило опыта командной работы, лидерских навыков и ресурса, чтобы продолжать. Но саму идею делать игры я бросать не стал. Я начал развивать контент под псевдонимом <b>ZenDev</b> — сокращение от <i>Zen Developer</i>. Изначально хотелось сделать большую RPG, но довольно быстро я понял, что мне гораздо интереснее динамичный шутер. Так появился <b>Dreadshot</b>.</p>
+              <p>С 2022 года я последовательно развиваю Dreadshot и учусь практически всему по ходу работы. В 2024 году у игры появилась страница в Steam, а сам я стал её единственным разработчиком и издателем. В том же году я принял участие в создании альбома <i>Dreadshot: Development Hell</i> композитора chlorofeat.</p>
+              <p>В конце 2025 — начале 2026 года я принял непростое решение полностью перезапустить проект: исходная кодовая база находилась в слишком плохом техническом состоянии. После нескольких лет разработки это стало серьёзным ударом по мотивации, поэтому я на некоторое время отошёл от игры и контента и работал в других сферах, в том числе официантом. Это был не самый простой период, но он позволил мне сохранить возможность продолжать проект и пересобрать подход к разработке.</p>
+              <p>Сейчас Dreadshot снова активно развивается. Проект остаётся инди-игрой, но перестал быть полностью соло: в разработке на добровольной основе мне помогает друг-программист. Мы заново строим игру с учётом накопленного опыта и современных производственных подходов Unreal Engine 5.</p>
+              <p class="bio-end">В итоге ZenDev для меня — это не только никнейм, а долгосрочный путь: делать игры, учиться на собственных ошибках и постепенно доводить Dreadshot до того состояния, которым действительно можно гордиться.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -111,36 +149,36 @@
 
     <section class="section support-section" id="support">
       <div class="container">
-        <div class="section-heading compact">
-          <div><span>02 · Поддержка</span><h2>Поддержать</h2></div>
-          <p>Подписка, разовый донат или перевод напрямую.</p>
+        <div class="section-heading compact reveal">
+          <div><span>04 · Поддержка</span><h2>Поддержать</h2></div>
+          <p>Если нравится то, что я делаю, есть несколько способов помочь проекту.</p>
         </div>
 
         <div class="support-grid">
-          <a class="support-card featured" href="https://t.me/tribute/app?startapp=s4Y3" target="_blank" rel="noopener noreferrer">
+          <a class="support-card featured reveal" href="https://t.me/tribute/app?startapp=s4Y3" target="_blank" rel="noopener noreferrer">
             <div class="card-index">01</div>
             <small>ЗАКРЫТОЕ СООБЩЕСТВО</small>
             <h3>ZenDev Eternal</h3>
             <p>Эксклюзивный контент, технические инсайты, записи стримов и приватное комьюнити.</p>
             <strong>Открыть ↗</strong>
           </a>
-          <a class="support-card" href="https://www.donationalerts.com/r/zen_gd" target="_blank" rel="noopener noreferrer">
+          <a class="support-card reveal delay-1" href="https://www.donationalerts.com/r/zen_gd" target="_blank" rel="noopener noreferrer">
             <div class="card-index">02</div>
-            <small>РАЗОВЫЙ ДОНАТ</small>
+            <small>РАЗОВАЯ ПОДДЕРЖКА</small>
             <h3>DonationAlerts</h3>
-            <p>Простой способ поддержать проект через DonationAlerts.</p>
+            <p>Простой способ отправить разовый донат.</p>
             <strong>Открыть ↗</strong>
           </a>
-          <a class="support-card" href="https://t.me/tribute/app?startapp=djPw" target="_blank" rel="noopener noreferrer">
+          <a class="support-card reveal delay-2" href="https://t.me/tribute/app?startapp=djPw" target="_blank" rel="noopener noreferrer">
             <div class="card-index">03</div>
-            <small>РАЗОВЫЙ ДОНАТ</small>
+            <small>РАЗОВАЯ ПОДДЕРЖКА</small>
             <h3>Tribute</h3>
-            <p>Перевод через Telegram.</p>
+            <p>Разовый перевод прямо через Telegram.</p>
             <strong>Открыть ↗</strong>
           </a>
         </div>
 
-        <div class="crypto-card">
+        <div class="crypto-card reveal delay-1">
           <div class="crypto-heading"><span>КРИПТОПЕРЕВОД</span><h3>Адреса</h3></div>
           <div class="crypto-list">
             <div class="crypto-row">
@@ -159,10 +197,11 @@
 
   <footer class="footer">
     <div class="container footer-wrap">
-      <span>ZenDev · Беларусь</span>
-      <a href="https://t.me/zen_gd/9915" target="_blank" rel="noopener noreferrer">Материалы по геймдеву ↗</a>
+      <div class="footer-left"><span>ZenDev · Беларусь</span><a href="https://t.me/zen_gd/9915" target="_blank" rel="noopener noreferrer">Материалы по геймдеву ↗</a></div>
+      <div class="footer-contact"><span>Для сотрудничества</span><a href="https://t.me/zengd" target="_blank" rel="noopener noreferrer">Telegram ↗</a><a href="mailto:greenzen.dev@gmail.com">greenzen.dev@gmail.com</a></div>
     </div>
   </footer>
+
   <div class="toast" id="toast" role="status" aria-live="polite">Скопировано</div>
   <script src="script.js"></script>
 </body>
