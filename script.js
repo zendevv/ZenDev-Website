@@ -39,50 +39,38 @@
     bioContent.hidden = expanded;
   });
 
-  // Gentle matrix background: deliberately slow and low-contrast.
-  const canvas = document.getElementById('matrixCanvas');
-  const ctx = canvas.getContext('2d');
-  let width = 0, height = 0, columns = 0, drops = [];
-  const chars = '01ZXENDEV<>[]{}/*+-';
-  const fontSize = 14;
 
-  function resizeMatrix() {
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.6);
-    width = Math.floor(window.innerWidth * dpr);
-    height = Math.floor(window.innerHeight * dpr);
-    canvas.width = width;
-    canvas.height = height;
-    canvas.style.width = window.innerWidth + 'px';
-    canvas.style.height = window.innerHeight + 'px';
-    columns = Math.ceil(window.innerWidth / fontSize);
-    drops = Array.from({ length: columns }, (_, i) => -Math.random() * 20 - (i % 9));
-    ctx.font = `${fontSize}px monospace`;
-  }
-
-  function drawMatrix() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const scale = width / Math.max(window.innerWidth, 1);
-    ctx.setTransform(scale, 0, 0, scale, 0, 0);
-    ctx.fillStyle = 'rgba(4,9,6,.095)';
-    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
-    for (let i = 0; i < drops.length; i++) {
-      const x = i * fontSize;
-      const y = drops[i] * fontSize;
-      const brightness = 34 + Math.floor(Math.random() * 18);
-      ctx.fillStyle = `rgba(98, 227, 145, ${brightness / 255})`;
-      const char = chars[Math.floor(Math.random() * chars.length)];
-      ctx.fillText(char, x, y);
-      if (y > window.innerHeight && Math.random() > 0.975) drops[i] = -Math.random() * 8;
-      drops[i] += 0.22 + Math.random() * 0.08;
-    }
-    requestAnimationFrame(drawMatrix);
-  }
-  resizeMatrix();
-  window.addEventListener('resize', resizeMatrix, { passive: true });
-  requestAnimationFrame(drawMatrix);
-
-  // Steam Store API enhancement. GitHub Pages remains functional if the API is unavailable.
   const steamUrl = 'https://store.steampowered.com/api/appdetails?appids=2782640&l=russian&cc=us';
+  const gallery = { images: [], index: 0 };
+  const screenshot = document.getElementById('steamScreenshot');
+  const galleryStrip = document.getElementById('galleryStrip');
+  const galleryCounter = document.getElementById('galleryCounter');
+  const galleryFrame = document.querySelector('.gallery-frame');
+
+  function renderGallery() {
+    if (!gallery.images.length) { galleryCounter.textContent = '0 / 0'; return; }
+    const item = gallery.images[gallery.index];
+    galleryFrame.classList.add('is-changing');
+    setTimeout(() => {
+      screenshot.src = item.full;
+      screenshot.alt = `Dreadshot — скриншот ${gallery.index + 1}`;
+      galleryCounter.textContent = `${gallery.index + 1} / ${gallery.images.length}`;
+      galleryFrame.classList.remove('is-changing');
+      document.querySelectorAll('.gallery-thumb').forEach((el, i) => el.classList.toggle('active', i === gallery.index));
+    }, 90);
+  }
+  function setGalleryIndex(index) {
+    if (!gallery.images.length) return;
+    gallery.index = (index + gallery.images.length) % gallery.images.length;
+    renderGallery();
+  }
+  document.getElementById('galleryPrev').addEventListener('click', () => setGalleryIndex(gallery.index - 1));
+  document.getElementById('galleryNext').addEventListener('click', () => setGalleryIndex(gallery.index + 1));
+  galleryFrame.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') setGalleryIndex(gallery.index - 1);
+    if (event.key === 'ArrowRight') setGalleryIndex(gallery.index + 1);
+  });
+
   async function loadSteam() {
     try {
       const response = await fetch(steamUrl, { mode: 'cors' });
@@ -95,17 +83,33 @@
       if (data.header_image) document.getElementById('steamHeroImage').src = data.header_image;
       const tags = (data.genres || []).map(g => g.description).slice(0, 4);
       if (tags.length) document.getElementById('steamTags').innerHTML = tags.map(t => `<span>${escapeHtml(t)}</span>`).join('');
-      const gallery = document.getElementById('steamGallery');
-      const shots = (data.screenshots || []).slice(0, 3);
+      const shots = (data.screenshots || []).map(s => ({ full: s.path_full, thumb: s.path_thumbnail || s.path_full }));
       if (shots.length) {
-        gallery.innerHTML = shots.map((s, i) => `<a class="steam-thumb" href="${s.path_full}" target="_blank" rel="noopener noreferrer"><img src="${s.path_thumbnail || s.path_full}" alt="Скриншот Dreadshot ${i + 1}" loading="lazy"><span>Screenshot 0${i + 1}</span></a>`).join('');
+        gallery.images = shots;
+        galleryStrip.innerHTML = shots.map((s, i) => `<button class="gallery-thumb${i === 0 ? ' active' : ''}" type="button" aria-label="Открыть скриншот ${i + 1}"><img src="${s.thumb}" alt="" loading="lazy"></button>`).join('');
+        galleryStrip.querySelectorAll('.gallery-thumb').forEach((button, i) => button.addEventListener('click', () => setGalleryIndex(i)));
+        renderGallery();
       }
     } catch {
-      // Static fallback remains in place. Steam's store page is still linked directly.
+      gallery.images = [{ full: screenshot.src, thumb: screenshot.src }];
+      galleryCounter.textContent = '1 / 1';
     }
   }
   function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]));
   }
   loadSteam();
+
+  // Smooth reveal on scroll; initial hero enters independently.
+  document.documentElement.classList.add('js');
+  requestAnimationFrame(() => document.body.classList.add('page-enter'));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -7% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 })();
